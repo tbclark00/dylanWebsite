@@ -68,6 +68,8 @@ footer {
         width:100%;
         border:2px solid #009999;
         padding:.5rem;
+        font-size:16px;
+        border-radius:5px;
     }
 }
 #submitButton{
