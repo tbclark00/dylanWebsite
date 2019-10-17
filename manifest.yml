@@ -1,5 +1,5 @@
 ---
 applications:
-  - name:    dylan-website
+  - name:    dylanClarkWebsite
     random-route: true
     memory:  128M
