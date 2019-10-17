@@ -19,6 +19,8 @@ app.get('/sample', (req, res) => res.sendFile(path.join(__dirname + '/public/sam
 
 app.get('/contactMe', (req, res) => res.sendFile(path.join( __dirname + '/public/contactForm.html')));
 
+app.get('/thankYou', (req, res) => res.sendFile(path.join(__dirname + '/public/thankYou.html')));
+
 app.post('/send', (req, res) => {
     const email= `
     <h2>Contact Details</h2><br>
@@ -58,6 +60,8 @@ app.post('/send', (req, res) => {
         }
         console.log('Message sent: %s', info.messageId);
         });
+    return res.redirect('/thankYou');
+
 });
 
 
