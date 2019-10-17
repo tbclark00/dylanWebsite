@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer')
 var app = express();
 var atob = require('atob');
-const pass = "T3BwYWJib2Jib0A=";
+const pass = "T3BwYWJib2Jib0Ay";
 
 
 
@@ -37,7 +37,7 @@ app.post('/send', (req, res) => {
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
-            user: 'dylbclark@gmail.com',
+            user: 'tbclarkengineering@gmail.com',
             pass: decodedPass
         },
         tls:{
@@ -47,7 +47,7 @@ app.post('/send', (req, res) => {
 
     let mailOptions = {
         from: '"Nodemailer" <contact@dylbclark.com>',
-        to: 'dylbclark@gmail.com',
+        to: 'tbclarkengineering@gmail.com',
         subject: 'Node Contact Request',
         html: email
     };

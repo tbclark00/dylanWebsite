@@ -1,6 +1,7 @@
-FROM node:9-slim
+FROM node:9
 WORKDIR /src
-COPY package.json ./src
+COPY package.json .
 RUN npm install
-COPY . ./src
+COPY . .
 CMD ["npm", "start"]
+EXPOSE 8080
