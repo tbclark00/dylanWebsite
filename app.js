@@ -59,8 +59,9 @@ app.post('/send', (req, res) => {
             return console.log(error);
         }
         console.log('Message sent: %s', info.messageId);
+        return res.redirect('/thankYou');
         });
-    return res.redirect('/thankYou');
+
 
 });
 
