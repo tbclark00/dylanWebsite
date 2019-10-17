@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+</head>
+<body>
+<p id="bod">Welcome</p><br>
+<button type="button" onmouseleave="sayBye()" onclick="sayHello()">Press Me!</button>
+</body>
+
+<script>
+    function sayHello(){
+        document.getElementById("bod").innerHTML = 'You Clicked!';
+        console.log('Hello');
+    };
+    function sayBye(){
+        document.getElementById("bod").innerHTML = 'Welcome';
+        console.log('Gooby');
+    };
+</script>
+</html>
