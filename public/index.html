@@ -3,9 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tylor Clark - Full Stack Developer</title>
+    <title>Tylor 'Dylan' Clark - Full Stack Developer</title>
     <meta name="description" content="">
     <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script type="text/javascript" src="/public/javascript/jquery.1.11.1.js"></script>
     <script type="text/javascript" src="/public/javascript/bootstrap.js"></script>
     <script type="text/javascript" src="/public/javascript/SmoothScroll.js"></script>
@@ -13,11 +16,18 @@
 </head>
 <!-- add nav bar !-->
 <div class="nav">
-    <p>nav bar</p>
-    <a href="/sample">Sample Work</a>
+    <div class="w3-bar w3-sand">
+        <button class="w3-bar-item w3-button tablink w3-teal" onclick="openTab(event,'home')">Home</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'algorithms')">Algorithm Modelling</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'api')">RESTful API</button>
+    </div>
 </div>
 <body>
 <br><br>
+<div id="home" class="w3-container w3-border tab">Home</div>
+<div id="algorithms" class="w3-container w3-border tab" style="display:none">Algorithms</div>
+<div id="api" class="w3-container w3-border tab" style="display:none">API</div>
+
 <div class="modal" id="formModal">
     <div class="modal-content">
     <div class="modal-header">
@@ -41,24 +51,28 @@
         <label for="phoneNumber">Phone Number</label>
         <input id="phoneNumber" type="text" name="phone_field" value="">
         </p>
+        <p>
         <label for="message">Message:</label>
-        <textarea rows="2" cols="50" id="message" type="text"  name="message_field" value=""></textarea>
+        <input id="message" type="text"  name="message_field" value="">
+        </p>
         <div class="modal-footer">
-        <button type="submit" id="submitButton">Submit</button>
+        <button onclick="thankYouMessage()" type="submit" id="submitButton">Submit</button>
         </div>
     </form>
     </div>
 </div>
 </body>
 <footer>
-    <!-- open pages in new tabs/windows !-->
-
-    <input type="image" onclick="openModal()" height="42" width="42" src="/public/images/email.png"/></a>
+    <input class="emailImage" type="image" onclick="openModal()" height="42" width="42" src="/public/images/email.png"/></a>
     <a href="https://github.com/tbclark00" target="_blank"><img height="42" width="42" src="/public/images/github.png" class="ico-git" /></a>
     <a href="https://www.linkedin.com/in/tylor-clark-a22b72138/" target="_blank"><img height="42" width="42" src="/public/images/linkedin.png" class="ico-linkedin"/></a>
 </footer>
 <script>
     let modal = document.getElementById('formModal');
+
+    let thankYouMessage = function (){
+      toastr.info('Thank you, I will respond to your email as quickly as possible.');
+    };
 
     let openModal = function(){
         console.log('open');
@@ -68,5 +82,19 @@
     let closeModal = function (){
         modal.style.display = 'none';
     };
+
+    function openTab(evt, tabName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("tab");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-teal", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " w3-teal";
+    }
     </script>
 </html>

@@ -52,6 +52,7 @@ footer {
     color: #777;
     padding: 30px 0 25px 0;
     text-align: center;
+    align-items: center;
 }
 .contactForm{
     margin:2rem auto;
@@ -66,7 +67,7 @@ input, textarea{
     display:block;
     width:100%;
     border:2px solid #009999;
-    padding:.5rem;
+    padding-bottom:1.5rem;
     font-size:16px;
     border-radius:5px;
 }
@@ -97,6 +98,7 @@ input, textarea{
 .modal-footer{
     text-align: center;
     background-color: wheat;
+    padding: 0;
 }
 .modal-header h2{
     margin: 0;
@@ -119,6 +121,14 @@ input, textarea{
 #submitButton:hover{
     background: #0099ff;
 }
+.emailImage{
+    position: relative;
+    top: 17px;
+}
+.emailImage:hover{
+    opacity: .5;
+
+}
 
 .closeButton{
     float: right;
@@ -130,6 +140,12 @@ input, textarea{
     cursor: pointer;
     text-decoration: none;
 
+}
+img{
+    position: relative;
+}
+img:hover{
+    opacity: .5;
 }
 
 @keyframes modalopen {
