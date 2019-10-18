@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tylor Clark - Full Stack Developer</title>
     <meta name="description" content="">
-    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/public/css/styles.css">
     <script type="text/javascript" src="/public/javascript/jquery.1.11.1.js"></script>
     <script type="text/javascript" src="/public/javascript/bootstrap.js"></script>
     <script type="text/javascript" src="/public/javascript/SmoothScroll.js"></script>
@@ -19,14 +18,55 @@
 </div>
 <body>
 <br><br>
-
+<div class="modal" id="formModal">
+    <div class="modal-content">
+    <div class="modal-header">
+        <span class="closeButton" id="button" onclick="closeModal()">&times;</span>
+        <h3>Contact Me</h3>
+    </div>
+    <form class="contactForm" action="/send" method="POST">
+        <p>
+        <label for="firstName">Name: </label>
+        <input id="firstName" type="text" name="name_field" value="">
+        </p>
+        <p>
+        <label for="company">Company:</label>
+        <input id="company" type="text" name="company_field" value="">
+        </p>
+        <p>
+        <label for="email">Email:</label>
+        <input id="email" type="text" name="email_field" value="">
+        </p>
+        <p>
+        <label for="phoneNumber">Phone Number</label>
+        <input id="phoneNumber" type="text" name="phone_field" value="">
+        </p>
+        <label for="message">Message:</label>
+        <textarea rows="2" cols="50" id="message" type="text"  name="message_field" value=""></textarea>
+        <div class="modal-footer">
+        <button type="submit" id="submitButton">Submit</button>
+        </div>
+    </form>
+    </div>
+</div>
+</body>
 <footer>
     <!-- open pages in new tabs/windows !-->
 
-    <a href="/contactMe" target="_blank"><img height="42" width="42" src="/public/images/email.png"/></a>
+    <input type="image" onclick="openModal()" height="42" width="42" src="/public/images/email.png"/></a>
     <a href="https://github.com/tbclark00" target="_blank"><img height="42" width="42" src="/public/images/github.png" class="ico-git" /></a>
     <a href="https://www.linkedin.com/in/tylor-clark-a22b72138/" target="_blank"><img height="42" width="42" src="/public/images/linkedin.png" class="ico-linkedin"/></a>
 </footer>
+<script>
+    let modal = document.getElementById('formModal');
 
-</body>
+    let openModal = function(){
+        console.log('open');
+        modal.style.display = 'block';
+    };
+
+    let closeModal = function (){
+        modal.style.display = 'none';
+    };
+    </script>
 </html>

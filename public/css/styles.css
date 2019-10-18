@@ -9,7 +9,7 @@ body, html {
     font-family: 'Open Sans', sans-serif;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
-    color: #666;
+    background-color: #32a0a8;
     width: 100% !important;
     height: 100% !important;
     text-align: center;
@@ -48,29 +48,64 @@ footer {
     width: 100%;
     left: 0;
     bottom: 0;
-    background: #ffffff;
+    background-color: wheat;
     color: #777;
     padding: 30px 0 25px 0;
     text-align: center;
 }
 .contactForm{
-    max-width:500px;
     margin:2rem auto;
     border: 2px solid #32a0a8;
-    label{
-        display:block;
-        padding:1rem 0 .5rem;
-        text-transform: uppercase;
-        font-size:12px;
-    }
-    input, textarea{
-        display:block;
-        width:100%;
-        border:2px solid #009999;
-        padding:.5rem;
-        font-size:16px;
-        border-radius:5px;
-    }
+label{
+    display:block;
+    padding:1rem 0 .5rem;
+    text-transform: uppercase;
+    font-size:12px;
+}
+input, textarea{
+    display:block;
+    width:100%;
+    border:2px solid #009999;
+    padding:.5rem;
+    font-size:16px;
+    border-radius:5px;
+}
+}
+
+.modal{
+    animation-name: modalopen;
+    animation-duration: 1.5s;
+    display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,.5);
+
+}
+.modal-content{
+    background-color: #32a0a8;
+    margin: 20% auto;
+    width: 70%;
+    padding: 0;
+    text-align: left;
+    color: wheat;
+}
+.modal-footer{
+    text-align: center;
+    background-color: wheat;
+}
+.modal-header h2{
+    margin: 0;
+    color: #32a0a8;
+}
+.modal-header{
+    padding: 15px;
+    background-color: wheat;
+    color: #32a0a8;
 }
 #submitButton{
     border:0;
@@ -80,7 +115,24 @@ footer {
     margin:1rem 0;
     width: auto;
     text-transform:uppercase;
-    &:hover{
-        background: #0099ff;
-     }
+}
+#submitButton:hover{
+    background: #0099ff;
+}
+
+.closeButton{
+    float: right;
+    font-size: 30px;
+    color: #32a0a8;
+}
+.closeButton:hover, .closeButton:focus{
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+@keyframes modalopen {
+    from{opacity: 0}
+    to{opacity: 1}
 }
