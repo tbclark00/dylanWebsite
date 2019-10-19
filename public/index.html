@@ -7,24 +7,24 @@
     <meta name="description" content="">
     <link rel="stylesheet" href="/public/css/styles.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script type="text/javascript" src="/public/javascript/jquery.1.11.1.js"></script>
     <script type="text/javascript" src="/public/javascript/bootstrap.js"></script>
     <script type="text/javascript" src="/public/javascript/SmoothScroll.js"></script>
     <script type="text/javascript" src="/public/javascript/jqBootstrapValidation.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </head>
-<!-- add nav bar !-->
 <div class="nav">
     <div class="w3-bar w3-sand">
         <button class="w3-bar-item w3-button tablink w3-teal" onclick="openTab(event,'home')">Home</button>
-        <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'algorithms')">Algorithm Modelling</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'algorithms')">Algorithm Modeling</button>
         <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'api')">RESTful API</button>
+        <button id="threeJsButton" class="w3-bar-item w3-button tablink" onclick="sendToExample()">Three.js Work</button>
     </div>
 </div>
 <body>
-<br><br>
-<div id="home" class="w3-container w3-border tab">Home</div>
+<div id="home" class="w3-container w3-border tab">Home
+</div>
 <div id="algorithms" class="w3-container w3-border tab" style="display:none">Algorithms</div>
 <div id="api" class="w3-container w3-border tab" style="display:none">API</div>
 
@@ -48,7 +48,7 @@
         <input id="email" type="text" name="email_field" value="">
         </p>
         <p>
-        <label for="phoneNumber">Phone Number</label>
+        <label for="phoneNumber">Phone Number:</label>
         <input id="phoneNumber" type="text" name="phone_field" value="">
         </p>
         <p>
@@ -74,6 +74,7 @@
       toastr.info('Thank you, I will respond to your email as quickly as possible.');
     };
 
+
     let openModal = function(){
         console.log('open');
         modal.style.display = 'block';
@@ -95,6 +96,10 @@
         }
         document.getElementById(tabName).style.display = "block";
         evt.currentTarget.className += " w3-teal";
+    }
+
+    let sendToExample =  function(){
+        window.open(window.location.href + 'threejs', '_blank');
     }
     </script>
 </html>

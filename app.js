@@ -21,6 +21,8 @@ app.get('/contactMe', (req, res) => res.sendFile(path.join( __dirname + '/public
 
 app.get('/thankYou', (req, res) => res.sendFile(path.join(__dirname + '/public/thankYou.html')));
 
+app.get('/threejs', (req, res) => res.sendFile(path.join (__dirname + '/public/samplePage.html')));
+
 app.post('/send', (req, res) => {
     const email= `
     <h2>Contact Details</h2><br>
@@ -59,8 +61,9 @@ app.post('/send', (req, res) => {
             return console.log(error);
         }
         console.log('Message sent: %s', info.messageId);
-        return res.redirect('/thankYou');
         });
+
+    setTimeout( function(){res.redirect('/')}, 2500);
 
 
 });
