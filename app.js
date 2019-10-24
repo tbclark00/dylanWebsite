@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer')
 var app = express();
 var atob = require('atob');
+var fetch - require('node-fetch');
 const pass = "T3BwYWJib2Jib0Ay";
 
 
@@ -11,11 +12,19 @@ const pass = "T3BwYWJib2Jib0Ay";
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(fileNotFound());
+app.use(errorHandler());
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/public/index.html')));
 
 app.get('/sample', (req, res) => res.sendFile(path.join(__dirname + '/public/samplePage.html')));
 
+app.get('/videos', (req, res) => {
+    const url = "https://www.googleapis.com/v3/search";
+    fetch(`${url}&key=${process.env.GOOGLE_API_KEY}`).then(response => response.json()).then(json => {
+        res.json(json);
+    });
+});
 
 app.get('/contactMe', (req, res) => res.sendFile(path.join( __dirname + '/public/contactForm.html')));
 
@@ -67,6 +76,20 @@ app.post('/send', (req, res) => {
 
 
 });
+
+function fileNotFound(req, res, next){
+    res.status(404);
+    const err = new Error ('Not Found');
+    next(err);
+}
+
+function errorHandler(error, req, res, next){
+    res.status(res.errorCode);
+    res.json({
+        message: error.message
+})
+
+}
 
 
 app.listen(8080, () => console.log('Your site listening on port 8080!'));
