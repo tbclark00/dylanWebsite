@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer')
 var app = express();
 var atob = require('atob');
-var fetch - require('node-fetch');
+var fetch = require('node-fetch');
 const pass = "T3BwYWJib2Jib0Ay";
 
 
