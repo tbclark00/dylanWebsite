@@ -12,17 +12,7 @@ const pass = "T3BwYWJib2Jib0Ay";
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
-app.use(function (error, req, res, next) {
-    res.status(res.errorCode);
-    res.json({
-        message: error.message
-    });
-});
+
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/public/index.html')));
 
@@ -34,8 +24,6 @@ app.get('/videos', (req, res) => {
         res.json(json);
     });
 });
-
-app.get('/contactMe', (req, res) => res.sendFile(path.join( __dirname + '/public/contactForm.html')));
 
 app.get('/thankYou', (req, res) => res.sendFile(path.join(__dirname + '/public/thankYou.html')));
 
