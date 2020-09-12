@@ -21,7 +21,7 @@
     "atob": "^2.1.2",
     "express": "^4.17.1",
     "node": "10.16.3",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "nodemailer": "^6.3.1",
     "python": "0.0.4"
   }
