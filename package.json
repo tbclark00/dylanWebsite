@@ -19,7 +19,7 @@
   "homepage": "https://github.com/tbclark00/dylanWebsite#readme",
   "dependencies": {
     "atob": "^2.1.2",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "node": "10.16.3",
     "node-fetch": "^2.6.0",
     "nodemailer": "^6.3.1",
